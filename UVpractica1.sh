@@ -55,7 +55,7 @@ do
 		if [ -n "$BB" ]; then
                         echo "$BB"
                 else
-                        if [[ -z "$resposta2" ]]; then
+                        if [[ -z "$resposta2" || $YY == "XX" ]]; then
 				echo "Selecciona un pais amb l'acció sc"
 
 			fi
@@ -67,7 +67,7 @@ do
                 if [ -n "$CC" ]; then
                         echo "$CC"
                 else
-                        if [[ -z "$resposta2" ]]; then
+                        if [[ -z "$resposta2" || $YY == "XX" ]]; then
                                 echo "Selecciona un pais amb l'acció sc"
 			fi
 		fi
@@ -79,7 +79,7 @@ do
                         echo "$CC" > "$YY".csv
                 	cat "$YY".csv
                 else
-                        if [[ -z "$resposta2" ]]; then
+                        if [[ -z "$resposta2" || $YY == "XX" ]]; then
                                 echo "Selecciona un pais amb l'acció sc"
 			fi
                 fi
@@ -89,10 +89,10 @@ do
                 if [[ -n "$DD" ]]; then
                         echo $DD
                 else
-                	if [[ -z "$resposta2" ]]; then
+                	if [[ -z "$resposta2" || $YY == "XX" ]]; then
                                 echo "Selecciona un pais amb l'acció sc"
 			else
-				if [[ -z "$resposta3" ]]; then
+				if [[ -z "$resposta3" || $AA == "XX" ]]; then
                                 	echo "Selecciona un estat amb l'acció se"
 				fi
 			fi
@@ -106,10 +106,10 @@ do
                         echo "$DD" > "$YY"_"$AA".csv
                 	cat "$YY"_"$AA".csv
                 else
-                        if [[ -z "$resposta2" ]]; then
+                        if [[ -z "$resposta2" || $YY == "XX" ]]; then
                                 echo "Selecciona un pais amb l'acció sc"
                         else
-                                if [[ -z "$resposta3" ]]; then
+                                if [[ -z "$resposta3" || $AA == "XX" ]]; then
                                 	echo "Selecciona un estat amb l'acció se"
                                 fi
                         fi
@@ -123,13 +123,13 @@ do
 			echo $EE
 			curl -L https://www.wikidata.org/wiki/Special:EntityData/"${EE}".json  > "${EE}".json
                 else
-                        if [[ -z "$resposta2" ]]; then
+                        if [[ -z "$resposta2" || $YY == "XX" ]]; then
                                 echo "Selecciona un pais amb l'acció sc"
                         else
-                                if [[ -z "$resposta3" ]]; then
+                                if [[ -z "$resposta3" || $AA == "XX" ]]; then
                                 	echo "Selecciona un estat amb l'acció se"
 				else
-					if [[ -z "$resposta4" ]]; then
+					if [[ -z "$resposta4" || -z $EE ]]; then
                                 		echo "Introdueix un estat amb gwd"
 					else
 						echo "L'estat introduit no s'ha trobat al document" 
