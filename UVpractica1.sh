@@ -129,7 +129,7 @@ do
                                 if [[ -z "$AA" || $AA == "XX" ]]; then
                                 	echo "Selecciona un estat amb l'acció se"
 				else
-					if [[ -z "$EE" || -z $EE ]]; then
+					if [[ -z "$resposta4" ]]; then
                                 		echo "Introdueix un estat amb gwd"
 					else
 						echo "L'estat introduit no s'ha trobat al document" 
